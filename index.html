@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    />
+    <link href="styles/main.css" rel="stylesheet" />
+    <link href="styles/toggle.css" rel="stylesheet" />
+    <link href="styles/list.css" rel="stylesheet" />
+    <script src="scripts/toggle.js"></script>
+    <script src="scripts/main.js"></script>
+  </head>
+  <body>
+    <div class="toggle-container">
+      <i class="fa-solid fa-sun"></i>
+      <label class="switch">
+        <input type="checkbox" id="darkModeToggle" />
+        <span class="slider round"></span>
+      </label>
+      <i class="fa-solid fa-moon"></i>
+    </div>
+  </body>
+  <div class="main-container">
+    <h2>To-do List</h2>
+
+    <div class="input-container">
+      <input type="text" id="taskInput" placeholder="Add a new task..." />
+      <button id="addTaskBtn">
+        <i class="fa fa-plus" aria-hidden="true"></i>
+      </button>
+    </div>
+    <ul id="taskList">
+      <!-- Tasks will be added dynamically -->
+    </ul>
+  </div>
+  <div class="links">
+    <div>Created by André Oliveira</div>
+    <a href="https://github.com/InterpolProntos" target="_blank">GitHub</a>
+    <a
+      href="https://www.linkedin.com/in/andr%C3%A9-oliveira-a70b20b7/"
+      target="_blank"
+      >LinkedIn</a
+    >
+  </div>
+</html>
