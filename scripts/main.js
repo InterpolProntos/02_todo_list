@@ -40,7 +40,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Function to add task
-  const addTaskToList = (taskText) => {
+  const addTaskToList = (taskText, isCompleted = false) => {
     const li = document.createElement("li");
     const div = document.createElement("div");
     const checkbox = document.createElement("input");
@@ -50,6 +50,11 @@ document.addEventListener("DOMContentLoaded", () => {
     // Setup checkbox
     checkbox.type = "checkbox";
     checkbox.classList.add("task-checkbox");
+    checkbox.checked = isCompleted;
+    if (isCompleted) {
+      li.classList.add("completed");
+    }
+
     checkbox.addEventListener("change", () => {
       li.classList.toggle("completed");
     });
@@ -92,10 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function loadTasks() {
     const savedTasks = JSON.parse(localStorage.getItem("tasks") || "[]");
     savedTasks.forEach((task) => {
-      addTaskToList(task.text);
-      if (task.completed) {
-        taskList.lastChild.classList.add("completed");
-      }
+      addTaskToList(task.text, task.completed);
     });
   }
 
